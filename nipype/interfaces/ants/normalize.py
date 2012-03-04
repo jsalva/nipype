@@ -116,6 +116,7 @@ class BuildTemplate(ANTSCommand):
                 start='-z '
             else:
                 start=''
+            copyfiles(val,os.getcwd())
             return start+' '.join([os.path.split(name)[1] for name in val])
         return super(BuildTemplate,self)._format_arg(opt,spec,val)
 
